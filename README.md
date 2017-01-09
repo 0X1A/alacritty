@@ -54,7 +54,7 @@ will walk you through how to build from source on both macOS and Ubuntu.
    If you run into problems, you can try a known-good version of the compiler by running
    
    ```sh
-   rustup override set $(cat rustc-version)
+   rustup override set $(<rustc-version)
    ```
 
 #### Additional Linux Prerequisites
@@ -74,6 +74,7 @@ apt-get install cmake libfreetype6-dev libfontconfig1-dev xclip
 On Arch Linux, you need a few extra libraries to build Alacritty. Here's a
 `pacman` command that should install all of them. If something is still found
 to be missing, please open an issue.
+
 ```sh
 pacman -S cmake freetype2 fontconfig xclip
 ```
@@ -121,7 +122,7 @@ cargo build --release
 
 If all goes well, this should place a binary at `target/release/alacritty`.
 **BEFORE YOU RUN IT:** Install the config file as described below; otherwise,
-many things (such as arrow keys) would not work. If you're on macOS, you'll need
+many things (such as arrow keys) will not work. If you're on macOS, you'll need
 to change the `monospace` font family to something like `Menlo`.
 
 ### Desktop Entry
@@ -185,7 +186,7 @@ Just Works.
   `env WAYLAND_DISPLAY= alacritty`
 - _When will Windows support be available?_ When someone has time to work on it.
   Contributors would be welcomed :).
-- _My arrow keys don't work_ It sounds like you deleted some key bindings from
+- _My arrow keys don't work_. It sounds like you deleted some key bindings from
   your config file. Please reference the default config file to restore them.
 
 
